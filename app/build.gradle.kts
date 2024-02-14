@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    application
 }
 
 group = "hexlet.code"
@@ -17,7 +18,6 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
-
-plugins {
-    application
+application {
+    mainClass = "org.gradle.sample.Main"
 }
