@@ -19,5 +19,5 @@ tasks.test {
     useJUnitPlatform()
 }
 application {
-    mainClass = "org.gradle.sample.Main"
+    mainClass = "hexlet.code.App"
 }
