@@ -1,31 +1,37 @@
-package hexlet.code;
+package hexlet.code.games;
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 import java.util.Random;
 
 public class Even {
     public static void getAnswer() {
         int rightAns = 0;
-        while (rightAns < 3) {
+        int maxCount = 3;
+        String normalAnswer = "yes";
+        while (rightAns < maxCount) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             int newValue = generateNumber();
             System.out.println("Question: " + newValue);
             String userChoice = scanner.next();
-            System.out.println("Your answer: " + userChoice);
-            if (isEven(newValue) && userChoice.equals("yes")) {
-                System.out.println("Correct!");
+            if (!isEven(newValue)) {
+                normalAnswer = "no";
+            }
+            else {
+                normalAnswer = "yes";
+            }
+            String correctAns = normalAnswer;
+            //System.out.println("Your answer: " + userChoice);
+            if (Engine.isAnswer(userChoice.equals(normalAnswer), normalAnswer, userChoice)) {
                 rightAns++;
-            } else if (!isEven(newValue) && userChoice.equals("no")) {
-                System.out.println("Correct!");
-                rightAns++;
-            } else {
-                System.out.println("Let's try again, " + Cli.getName());
+            }
+            else {
                 break;
             }
+
         }
-        if (rightAns == 3) {
-            System.out.println("Congratulations, " + Cli.getName());
-        }
+        Engine.congratulations(rightAns == maxCount);
     }
 
 
@@ -34,7 +40,7 @@ public class Even {
         return rand.nextInt();
     }
 
-    private static boolean isEven(int num) {
+    public static boolean isEven(int num) {
         return num % 2 == 0;
     }
 }
