@@ -7,6 +7,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
                 Please enter the game number and press Enter.
+                5 - Progression
                 4 - GCD
                 3 - Calc
                 2 - Even
@@ -33,6 +34,9 @@ public class App {
             case ("4"):
                 Cli.greeting();
                 GCD.gcdGame();
+            case ("5"):
+                Cli.greeting();
+                Progression.getStart();
             case ("0"):
                 break;
             default:
