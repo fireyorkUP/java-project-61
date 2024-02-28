@@ -20,7 +20,7 @@ public class Calc {
                 break;
             }
         }
-        Engine.congratulations(rightAns == maxCount);
+        Engine.congratulations(maxCount == rightAns);
     }
 
 
