@@ -7,6 +7,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
                 Please enter the game number and press Enter.
+                6 - Prime
                 5 - Progression
                 4 - GCD
                 3 - Calc
@@ -37,6 +38,9 @@ public class App {
             case ("5"):
                 Cli.greeting();
                 Progression.getStart();
+            case ("6"):
+                Cli.greeting();
+                Prime.getPrime();
             case ("0"):
                 break;
             default:

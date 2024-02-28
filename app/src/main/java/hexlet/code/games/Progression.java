@@ -34,7 +34,6 @@ public class Progression {
 
     private static String getDisplayed(int[] progression, int hiddenIndex) {
         StringBuilder displayed = new StringBuilder();
-
         for (int i = 0; i < progression.length; i++) {
             if (i == hiddenIndex) {
                 displayed.append("..");
