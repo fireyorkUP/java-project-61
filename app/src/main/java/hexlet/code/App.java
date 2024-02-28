@@ -7,6 +7,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
                 Please enter the game number and press Enter.
+                4 - GCD
                 3 - Calc
                 2 - Even
                 1 - Greet
@@ -29,6 +30,9 @@ public class App {
                 Cli.greeting();
                 Calc.game();
                 break;
+            case ("4"):
+                Cli.greeting();
+                GCD.gcdGame();
             case ("0"):
                 break;
             default:

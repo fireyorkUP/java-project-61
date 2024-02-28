@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Calc {
-    static String question;
+    private static String question;
     public static void game() {
         int rightAns = 0;
         final int maxCount = 3;
@@ -26,7 +26,7 @@ public class Calc {
     }
 
 
-    public static int getTask() {
+    private static int getTask() {
         int num1 = (int) (Math.random() * 100);
         int num2 = (int) (Math.random() * 100);
         int Choice = (int) (Math.random() * 3);
