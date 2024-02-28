@@ -1,7 +1,7 @@
 package hexlet.code;
 
 public class Engine {
-    public static boolean isAnswer(boolean state, String correctAns, String Choice) {
+    public static boolean isAnswer(boolean state, Object correctAns, Object Choice) {
         System.out.println("Your answer: " + Choice);
         System.out.println("Correct answer: " + correctAns);
         if (state) {

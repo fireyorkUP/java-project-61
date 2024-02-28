@@ -26,7 +26,8 @@ public class App {
                 Even.getAnswer();
                 break;
             case ("3"):
-                //Calc.getCalc();
+                Cli.greeting();
+                Calc.game();
                 break;
             case ("0"):
                 break;
