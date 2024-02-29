@@ -9,7 +9,9 @@ public class Engine {
             return true;
         }
         else {
-            System.out.println("Let's try again, " + Cli.getName());
+            System.out.println("'" + Choice + "' is wrong answer ;(. Correct answer was '" + correctAns
+                    + "'.\nLet's try again, " + Cli.getName() + "!");
+
             return false;
         }
     }
