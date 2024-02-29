@@ -10,16 +10,16 @@ public class GCD {
         final int maxCount = 3;
         while (rightAns < maxCount) {
             Scanner answer = new Scanner(System.in);
-            int num1 = (random.nextInt(100) + 1);
-            int num2 = (random.nextInt(100) + 1);
+            final int maxNum = 100;
+            int num1 = (random.nextInt(maxNum) + 1);
+            int num2 = (random.nextInt(maxNum) + 1);
             int resultTask = getTask(num1, num2);
             System.out.println("Find the greatest common divisor of given numbers.");
             System.out.println("Question: " + num1 + " " + num2);
             int nextAns = answer.nextInt();
             if (Engine.isAnswer(nextAns == resultTask, resultTask, nextAns)) {
                 rightAns++;
-            }
-            else {
+            } else {
                 break;
             }
         }
@@ -29,8 +29,7 @@ public class GCD {
     private static int getTask(int a, int b) {
         if (b == 0) {
             return a;
-        }
-        else {
+        } else {
             return getTask(b, a % b);
         }
     }

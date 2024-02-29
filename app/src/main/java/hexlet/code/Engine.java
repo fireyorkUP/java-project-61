@@ -7,8 +7,7 @@ public class Engine {
         if (state) {
             System.out.println("Correct!");
             return true;
-        }
-        else {
+        } else {
             System.out.println("'" + choice + "' is wrong answer ;(. Correct answer was '" + correctAns
                     + "'.\nLet's try again, " + Cli.getName() + "!");
 

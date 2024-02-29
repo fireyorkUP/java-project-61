@@ -8,14 +8,14 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         while (rightAns < maxCount) {
             Scanner answer = new Scanner(System.in);
-            int randomNumber = (int) (Math.random() * 100);
+            final int maxNum = 100;
+            int randomNumber = (int) (Math.random() * maxNum);
             System.out.println("Question: " + randomNumber);
             String nextAns = answer.next();
             String result = isPrime(randomNumber) ? "yes" : "no";
             if (Engine.isAnswer(result.equals(nextAns), result, nextAns)) {
                 rightAns++;
-            }
-            else {
+            } else {
                 break;
             }
         }

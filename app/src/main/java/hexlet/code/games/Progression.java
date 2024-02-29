@@ -22,8 +22,7 @@ public class Progression {
             int result = progression[hiddenIndex];
             if (Engine.isAnswer(nextAns == result, result, nextAns)) {
                 rightAns++;
-            }
-            else {
+            } else {
                 break;
             }
             progression = genProgression(sequenceLength);
@@ -37,8 +36,7 @@ public class Progression {
         for (int i = 0; i < progression.length; i++) {
             if (i == hiddenIndex) {
                 displayed.append("..");
-            }
-            else {
+            } else {
                 displayed.append(progression[i]);
             }
             if (i < progression.length - 1) {
@@ -50,8 +48,9 @@ public class Progression {
 
     private static int[] genProgression(int length) {
         Random random2 = new Random();
-        int start = random2.nextInt(100) + 1;
-        int step = random2.nextInt(100) + 1;
+        final int maxNum = 100;
+        int start = random2.nextInt(maxNum) + 1;
+        int step = random2.nextInt(maxNum) + 1;
 
         int[] progression = new int[length];
         for (int i = 0; i < length; i++) {

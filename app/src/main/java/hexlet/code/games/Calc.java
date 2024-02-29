@@ -15,8 +15,7 @@ public class Calc {
             int nextAns = answer.nextInt();
             if (Engine.isAnswer(nextAns == resultTask, resultTask, nextAns)) {
                 rightAns++;
-            }
-            else {
+            } else {
                 break;
             }
         }
@@ -25,9 +24,11 @@ public class Calc {
 
 
     private static int getTask() {
-        int num1 = (int) (Math.random() * 100);
-        int num2 = (int) (Math.random() * 100);
-        int choice = (int) (Math.random() * 3);
+        final int maxNum = 100;
+        final int variants = 3;
+        int num1 = (int) (Math.random() * maxNum);
+        int num2 = (int) (Math.random() * maxNum);
+        int choice = (int) (Math.random() * variants);
 
         if (choice == 0) {
             String action = " - ";

@@ -7,7 +7,7 @@ import java.util.Random;
 public class Even {
     public static void getAnswer() {
         int rightAns = 0;
-        int maxCount = 3;
+        final int maxCount = 3;
         String normalAnswer = "yes";
         while (rightAns < maxCount) {
             Scanner scanner = new Scanner(System.in);
@@ -17,16 +17,14 @@ public class Even {
             String userChoice = scanner.next();
             if (!isEven(newValue)) {
                 normalAnswer = "no";
-            }
-            else {
+            } else {
                 normalAnswer = "yes";
             }
             String correctAns = normalAnswer;
             //System.out.println("Your answer: " + userChoice);
             if (Engine.isAnswer(userChoice.equals(normalAnswer), normalAnswer, userChoice)) {
                 rightAns++;
-            }
-            else {
+            } else {
                 break;
             }
 
