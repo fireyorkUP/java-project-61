@@ -42,7 +42,7 @@ public class Progression {
                 displayed.append(progression[i]);
             }
             if (i < progression.length - 1) {
-                displayed.append(", ");
+                displayed.append(" ");
             }
         }
         return displayed.toString();
