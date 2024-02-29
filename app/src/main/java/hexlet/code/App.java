@@ -35,12 +35,15 @@ public class App {
             case ("4"):
                 Cli.greeting();
                 GCD.gcdGame();
+                break;
             case ("5"):
                 Cli.greeting();
                 Progression.getStart();
+                break;
             case ("6"):
                 Cli.greeting();
                 Prime.getPrime();
+                break;
             case ("0"):
                 break;
             default:
