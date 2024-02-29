@@ -3,7 +3,6 @@ package hexlet.code;
 public class Engine {
     public static boolean isAnswer(boolean state, Object correctAns, Object choice) {
         System.out.println("Your answer: " + choice);
-        System.out.println("Correct answer: " + correctAns);
         if (state) {
             System.out.println("Correct!");
             return true;
