@@ -27,13 +27,13 @@ public class Calc {
     private static int getTask() {
         int num1 = (int) (Math.random() * 100);
         int num2 = (int) (Math.random() * 100);
-        int Choice = (int) (Math.random() * 3);
+        int choice = (int) (Math.random() * 3);
 
-        if (Choice == 0) {
+        if (choice == 0) {
             String action = " - ";
             question = "Question: " + num1 + action + num2;
             return num1 - num2;
-        } else if (Choice == 1) {
+        } else if (choice == 1) {
             String action = " + ";
             question = "Question: " + num1 + action + num2;
             return num1 + num2;
