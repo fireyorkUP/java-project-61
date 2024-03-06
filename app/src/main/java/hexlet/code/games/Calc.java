@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Calc {
     private static String question;
     public static void game() {
+        Engine.getGreeting();
         int rightAns = 0;
         final int maxCount = 3;
         while (rightAns < maxCount) {

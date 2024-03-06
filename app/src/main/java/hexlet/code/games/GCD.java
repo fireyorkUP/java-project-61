@@ -6,6 +6,7 @@ import java.util.Random;
 public class GCD {
     public static void gcdGame() {
         Random random = new Random();
+        Engine.getGreeting();
         int rightAns = 0;
         final int maxCount = 3;
         while (rightAns < maxCount) {

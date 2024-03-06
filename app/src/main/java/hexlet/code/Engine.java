@@ -1,6 +1,9 @@
 package hexlet.code;
 
 public class Engine {
+    public static void getGreeting() {
+        Cli.greeting();
+    }
     public static boolean isAnswer(boolean state, Object correctAns, Object choice) {
         System.out.println("Your answer: " + choice);
         if (state) {

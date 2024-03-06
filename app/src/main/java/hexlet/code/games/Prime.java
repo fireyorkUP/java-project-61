@@ -3,6 +3,7 @@ import java.util.Scanner;
 import hexlet.code.Engine;
 public class Prime {
     public static void getPrime() {
+        Engine.getGreeting();
         int rightAns = 0;
         final int maxCount = 3;
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");

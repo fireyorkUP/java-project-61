@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Progression {
     public static void getStart() {
+        Engine.getGreeting();
         Random random = new Random();
         System.out.println("What number is missing in the progression?");
         int rightAns = 0;
