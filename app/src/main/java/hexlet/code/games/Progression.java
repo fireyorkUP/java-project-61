@@ -1,7 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-import java.util.Scanner;
 import java.util.Random;
 
 public class Progression {
@@ -17,20 +16,17 @@ public class Progression {
         int[] progression = genProgression(sequenceLength);
         int hiddenIndex = random.nextInt(sequenceLength);
         while (rightAns < maxCount) {
-            Scanner answer = new Scanner(System.in);
             String displayedSequence = getDisplayed(progression, hiddenIndex);
-            System.out.println("Question: " + displayedSequence);
-            int nextAns = answer.nextInt();
-            int result = progression[hiddenIndex];
-            if (Engine.isAnswer(nextAns == result, result, nextAns)) {
+            String result = Integer.toString(progression[hiddenIndex]);
+            if (Engine.newGame(displayedSequence, result)) {
                 rightAns++;
             } else {
                 break;
             }
             progression = genProgression(sequenceLength);
             hiddenIndex = random.nextInt(sequenceLength);
-            Engine.congratulations(rightAns == maxCount);
         }
+        Engine.congratulations(rightAns == maxCount);
     }
 
     private static String getDisplayed(int[] progression, int hiddenIndex) {
