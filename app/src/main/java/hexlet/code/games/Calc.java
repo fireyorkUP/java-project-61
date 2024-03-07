@@ -1,29 +1,24 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-import java.util.Scanner;
 
 public class Calc {
     private static String question;
     public static void game() {
         Engine.getGreeting();
-        int rightAns = 0;
+        int correctOne = 0;
         final int maxCount = 3;
-        while (rightAns < maxCount) {
-            Scanner answer = new Scanner(System.in);
-            int resultTask = getTask();
+        while (correctOne < maxCount) {
+            String resultTask = Integer.toString(getTask());
             System.out.println("What is the result of the expression?");
-            System.out.println(question);
-            int nextAns = answer.nextInt();
-            if (Engine.isAnswer(nextAns == resultTask, resultTask, nextAns)) {
-                rightAns++;
+            if (Engine.newGame(question, resultTask)) {
+                correctOne++;
             } else {
                 break;
             }
         }
-        Engine.congratulations(maxCount == rightAns);
+        Engine.congratulations(correctOne == maxCount);
     }
-
 
     private static int getTask() {
         final int minNum = 1;

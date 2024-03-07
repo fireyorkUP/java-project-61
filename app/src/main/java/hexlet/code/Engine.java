@@ -1,25 +1,32 @@
 package hexlet.code;
+import java.util.Scanner;
 
 public class Engine {
+    private static String userName;
     public static void getGreeting() {
-        Cli.greeting();
+        Scanner helloGame = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        userName = helloGame.next();
+        System.out.println("Hello, " + userName +  "!");
     }
-    public static boolean isAnswer(boolean state, Object correctAns, Object choice) {
-        System.out.println("Your answer: " + choice);
-        if (state) {
+    public static boolean newGame(Object question, Object answer) {
+        Scanner gameScan = new Scanner(System.in);
+        System.out.println("Question: " + question);
+        String usersAnswer = gameScan.nextLine();
+        System.out.println("Your answer: " + usersAnswer);
+        if (usersAnswer.equals(answer)) {
             System.out.println("Correct!");
             return true;
         } else {
-            System.out.println("'" + choice + "' is wrong answer ;(. Correct answer was '" + correctAns
-                    + "'.\nLet's try again, " + Cli.getName() + "!");
-
+            System.out.println("'" + usersAnswer + "' is wrong answer ;(. Correct answer was '" + answer
+                    + "'.\nLet's try again, " + userName + "!");
             return false;
         }
     }
-
     public static void congratulations(boolean state) {
         if (state) {
-            System.out.println("Congratulations, " + Cli.getName() + "!");
+            System.out.println("Congratulations, " + userName + "!");
         }
     }
 }
