@@ -1,6 +1,8 @@
 package hexlet.code.games;
 import java.util.Scanner;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
+
 public class Prime {
     public static void getPrime() {
         Engine.getGreeting();
@@ -9,8 +11,9 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         while (rightAns < maxCount) {
             Scanner answer = new Scanner(System.in);
+            final int minNum = 1;
             final int maxNum = 100;
-            int randomNumber = (int) (Math.random() * maxNum);
+            int randomNumber = Utils.generateNum(minNum, maxNum);
             System.out.println("Question: " + randomNumber);
             String nextAns = answer.next();
             String result = isPrime(randomNumber) ? "yes" : "no";

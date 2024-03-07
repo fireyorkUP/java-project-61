@@ -1,5 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 import java.util.Scanner;
 
 public class Calc {
@@ -25,10 +26,11 @@ public class Calc {
 
 
     private static int getTask() {
+        final int minNum = 1;
         final int maxNum = 100;
         final int variants = 3;
-        int num1 = (int) (Math.random() * maxNum);
-        int num2 = (int) (Math.random() * maxNum);
+        int num1 = Utils.generateNum(minNum, maxNum);
+        int num2 = Utils.generateNum(minNum, maxNum);
         int choice = (int) (Math.random() * variants);
 
         if (choice == 0) {

@@ -1,5 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -12,7 +13,7 @@ public class Progression {
         final int maxCount = 3;
         final int maxLength = 10;
         final int minLength = 5;
-        int sequenceLength = random.nextInt(maxLength - minLength + 1) + minLength;
+        int sequenceLength = Utils.generateNum(minLength, maxLength);
         int[] progression = genProgression(sequenceLength);
         int hiddenIndex = random.nextInt(sequenceLength);
         while (rightAns < maxCount) {
@@ -48,10 +49,10 @@ public class Progression {
     }
 
     private static int[] genProgression(int length) {
-        Random random2 = new Random();
+        final int minMin = 1;
         final int maxNum = 100;
-        int start = random2.nextInt(maxNum) + 1;
-        int step = random2.nextInt(maxNum) + 1;
+        int start = Utils.generateNum(minMin, maxNum);
+        int step = Utils.generateNum(minMin, maxNum);
 
         int[] progression = new int[length];
         for (int i = 0; i < length; i++) {
