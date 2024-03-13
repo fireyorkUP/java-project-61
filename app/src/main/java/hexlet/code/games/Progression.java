@@ -1,4 +1,5 @@
 package hexlet.code.games;
+import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 import java.util.Random;
@@ -6,15 +7,15 @@ import java.util.Random;
 public class Progression {
     public static void getStart() {
         Engine engine = new Engine("Progression");
-        Engine.getGreeting();
         Random random = new Random();
+        Cli.greetingName();
         int rightAns = 0;
         final int maxLength = 10;
         final int minLength = 5;
         int sequenceLength = Utils.generateNum(minLength, maxLength);
         int[] progression = genProgression(sequenceLength);
         int hiddenIndex = random.nextInt(sequenceLength);
-        while (rightAns < engine.maxCount) {
+        while (rightAns < engine.MAX_COUNT) {
             String displayedSequence = getDisplayed(progression, hiddenIndex);
             String result = Integer.toString(progression[hiddenIndex]);
             if (Engine.newGame(displayedSequence, result)) {
@@ -25,7 +26,9 @@ public class Progression {
             progression = genProgression(sequenceLength);
             hiddenIndex = random.nextInt(sequenceLength);
         }
-        Engine.congratulations(rightAns == engine.maxCount);
+        if (rightAns == engine.MAX_COUNT) {
+            System.out.println("Congratulations, " + Cli.userName + "!");
+        }
     }
 
     private static String getDisplayed(int[] progression, int hiddenIndex) {

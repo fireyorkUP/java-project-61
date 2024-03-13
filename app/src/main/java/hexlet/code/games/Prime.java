@@ -1,13 +1,14 @@
 package hexlet.code.games;
+import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Prime {
     public static void getPrime() {
         Engine engine = new Engine("Prime");
-        Engine.getGreeting();
+        Cli.greetingName();
         int rightAns = 0;
-        while (rightAns < engine.maxCount) {
+        while (rightAns < engine.MAX_COUNT) {
             final int minNum = 1;
             final int maxNum = 100;
             int randomNumber = Utils.generateNum(minNum, maxNum);
@@ -18,7 +19,9 @@ public class Prime {
                 break;
             }
         }
-        Engine.congratulations(rightAns == engine.maxCount);
+        if (rightAns == engine.MAX_COUNT) {
+            System.out.println("Congratulations, " + Cli.userName + "!");
+        }
     }
 
     private static boolean isPrime(int num) {

@@ -25,7 +25,7 @@ public class App {
     public static void selectGame(String userChoice) {
         switch (userChoice) {
             case ("1"):
-                Cli.greeting();
+                Cli.greetingName();
                 break;
             case ("2"):
                 Even.getAnswer();

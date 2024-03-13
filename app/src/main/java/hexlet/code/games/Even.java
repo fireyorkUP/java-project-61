@@ -1,14 +1,15 @@
 package hexlet.code.games;
+import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Even {
     public static void getAnswer() {
         Engine engine = new Engine("Even");
-        Engine.getGreeting();
+        Cli.greetingName();
         int rightAns = 0;
         String normalAnswer;
-        while (rightAns < engine.maxCount) {
+        while (rightAns < engine.MAX_COUNT) {
             final int minNum = 1;
             final int maxNum = 100;
             int newValue = Utils.generateNum(minNum, maxNum);
@@ -23,7 +24,9 @@ public class Even {
                 break;
             }
         }
-        Engine.congratulations(rightAns == engine.maxCount);
+        if (rightAns == engine.MAX_COUNT) {
+            System.out.println("Congratulations, " + Cli.userName + "!");
+        }
     }
     public static boolean isEven(int num) {
         return num % 2 == 0;
