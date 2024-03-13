@@ -2,7 +2,13 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    public final int maxCount = 3;
     private static String userName;
+    private static String gameSelection;
+    public Engine(String gameSelection) {
+        this.gameSelection = gameSelection;
+    }
+
     public static void getGreeting() {
         Scanner helloGame = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
@@ -11,6 +17,23 @@ public class Engine {
         System.out.println("Hello, " + userName +  "!");
     }
     public static boolean newGame(Object question, Object answer) {
+        switch (gameSelection) {
+            case ("Even"):
+                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+                break;
+            case ("Calc"):
+                System.out.println("What is the result of the expression?");
+                break;
+            case ("GCD"):
+                System.out.println("Find the greatest common divisor of given numbers.");
+                break;
+            case ("Progression"):
+                System.out.println("What number is missing in the progression?");
+                break;
+            case ("Prime"):
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+                break;
+        }
         Scanner gameScan = new Scanner(System.in);
         System.out.println("Question: " + question);
         String usersAnswer = gameScan.nextLine();

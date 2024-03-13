@@ -4,14 +4,13 @@ import hexlet.code.Utils;
 
 public class Even {
     public static void getAnswer() {
+        Engine engine = new Engine("Even");
         Engine.getGreeting();
         int rightAns = 0;
-        final int maxCount = 3;
         String normalAnswer;
-        while (rightAns < maxCount) {
+        while (rightAns < engine.maxCount) {
             final int minNum = 1;
             final int maxNum = 100;
-            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             int newValue = Utils.generateNum(minNum, maxNum);
             if (!isEven(newValue)) {
                 normalAnswer = "no";
@@ -24,7 +23,7 @@ public class Even {
                 break;
             }
         }
-        Engine.congratulations(rightAns == maxCount);
+        Engine.congratulations(rightAns == engine.maxCount);
     }
     public static boolean isEven(int num) {
         return num % 2 == 0;

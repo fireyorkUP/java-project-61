@@ -5,19 +5,18 @@ import hexlet.code.Utils;
 public class Calc {
     private static String question;
     public static void game() {
+        Engine engine = new Engine("Calc");
         Engine.getGreeting();
         int correctOne = 0;
-        final int maxCount = 3;
-        while (correctOne < maxCount) {
+        while (correctOne < engine.maxCount) {
             String resultTask = Integer.toString(getTask());
-            System.out.println("What is the result of the expression?");
             if (Engine.newGame(question, resultTask)) {
                 correctOne++;
             } else {
                 break;
             }
         }
-        Engine.congratulations(correctOne == maxCount);
+        Engine.congratulations(correctOne == engine.maxCount);
     }
 
     private static int getTask() {

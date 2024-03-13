@@ -5,17 +5,16 @@ import java.util.Random;
 
 public class Progression {
     public static void getStart() {
+        Engine engine = new Engine("Progression");
         Engine.getGreeting();
         Random random = new Random();
-        System.out.println("What number is missing in the progression?");
         int rightAns = 0;
-        final int maxCount = 3;
         final int maxLength = 10;
         final int minLength = 5;
         int sequenceLength = Utils.generateNum(minLength, maxLength);
         int[] progression = genProgression(sequenceLength);
         int hiddenIndex = random.nextInt(sequenceLength);
-        while (rightAns < maxCount) {
+        while (rightAns < engine.maxCount) {
             String displayedSequence = getDisplayed(progression, hiddenIndex);
             String result = Integer.toString(progression[hiddenIndex]);
             if (Engine.newGame(displayedSequence, result)) {
@@ -26,7 +25,7 @@ public class Progression {
             progression = genProgression(sequenceLength);
             hiddenIndex = random.nextInt(sequenceLength);
         }
-        Engine.congratulations(rightAns == maxCount);
+        Engine.congratulations(rightAns == engine.maxCount);
     }
 
     private static String getDisplayed(int[] progression, int hiddenIndex) {

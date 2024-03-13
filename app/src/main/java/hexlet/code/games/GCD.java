@@ -4,11 +4,10 @@ import hexlet.code.Utils;
 
 public class GCD {
     public static void gcdGame() {
+        Engine engine = new Engine("GCD");
         Engine.getGreeting();
         int rightAns = 0;
-        final int maxCount = 3;
-        System.out.println("Find the greatest common divisor of given numbers.");
-        while (rightAns < maxCount) {
+        while (rightAns < engine.maxCount) {
             final int minNum = 1;
             final int maxNum = 100;
             int num1 = Utils.generateNum(minNum, maxNum);
@@ -21,7 +20,7 @@ public class GCD {
                 break;
             }
         }
-        Engine.congratulations(rightAns == maxCount);
+        Engine.congratulations(rightAns == engine.maxCount);
     }
     private static int getTask(int a, int b) {
         if (b == 0) {
