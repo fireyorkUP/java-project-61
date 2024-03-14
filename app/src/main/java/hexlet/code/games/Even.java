@@ -9,7 +9,7 @@ public class Even {
         Cli.greetingName();
         int rightAns = 0;
         String normalAnswer;
-        while (rightAns < engine.maxCount) {
+        while (rightAns < Engine.getMaxCount()) {
             final int minNum = 1;
             final int maxNum = 100;
             int newValue = Utils.generateNum(minNum, maxNum);
@@ -24,8 +24,8 @@ public class Even {
                 break;
             }
         }
-        if (rightAns == engine.maxCount) {
-            System.out.println("Congratulations, " + Cli.userName + "!");
+        if (rightAns == Engine.getMaxCount()) {
+            System.out.println("Congratulations, " + Cli.getName() + "!");
         }
     }
     public static boolean isEven(int num) {

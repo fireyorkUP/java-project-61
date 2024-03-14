@@ -12,12 +12,14 @@ public class Progression {
         int rightAns = 0;
         final int maxLength = 10;
         final int minLength = 5;
+        final int minNum = 1;
+        final int maxNum = 100;
         int sequenceLength = Utils.generateNum(minLength, maxLength);
         int[] progression;
         int hiddenIndex;
-        while (rightAns < engine.maxCount) {
-            int firstNumber = Utils.generateNum(1, 100);
-            int step = Utils.generateNum(1, 100);
+        while (rightAns < engine.getMaxCount()) {
+            int firstNumber = Utils.generateNum(minNum, maxNum);
+            int step = Utils.generateNum(minNum, maxNum);
             progression = genProgression(sequenceLength, firstNumber, step);
             hiddenIndex = random.nextInt(sequenceLength);
             String displayedSequence = getDisplayed(progression, hiddenIndex);
@@ -28,8 +30,8 @@ public class Progression {
                 break;
             }
         }
-        if (rightAns == engine.maxCount) {
-            System.out.println("Congratulations, " + Cli.userName + "!");
+        if (rightAns == Engine.getMaxCount()) {
+            System.out.println("Congratulations, " + Cli.getName() + "!");
         }
     }
 

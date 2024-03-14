@@ -8,7 +8,7 @@ public class GCD {
         Engine engine = new Engine("GCD");
         Cli.greetingName();
         int rightAns = 0;
-        while (rightAns < engine.maxCount) {
+        while (rightAns < Engine.getMaxCount()) {
             final int minNum = 1;
             final int maxNum = 100;
             int num1 = Utils.generateNum(minNum, maxNum);
@@ -21,8 +21,8 @@ public class GCD {
                 break;
             }
         }
-        if (rightAns == engine.maxCount) {
-            System.out.println("Congratulations, " + Cli.userName + "!");
+        if (rightAns == Engine.getMaxCount()) {
+            System.out.println("Congratulations, " + Cli.getName() + "!");
         }
     }
     private static int getTask(int a, int b) {

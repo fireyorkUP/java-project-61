@@ -1,7 +1,11 @@
 package hexlet.code;
 import java.util.Scanner;
 public class Cli {
-    public static String userName;
+    private static String userName;
+
+    public static String getName() {
+        return userName;
+    }
     public static void greetingName() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");

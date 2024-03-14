@@ -9,7 +9,7 @@ public class Calc {
         Engine engine = new Engine("Calc");
         Cli.greetingName();
         int rightAns = 0;
-        while (rightAns < engine.maxCount) {
+        while (rightAns < Engine.getMaxCount()) {
             String resultTask = Integer.toString(getTask());
             if (Engine.newGame(question, resultTask)) {
                 rightAns++;
@@ -17,8 +17,8 @@ public class Calc {
                 break;
             }
         }
-        if (rightAns == engine.maxCount) {
-        System.out.println("Congratulations, " + Cli.userName + "!");
+        if (rightAns == Engine.getMaxCount()) {
+        System.out.println("Congratulations, " + Cli.getName() + "!");
     }
     }
 

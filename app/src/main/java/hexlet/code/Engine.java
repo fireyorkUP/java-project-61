@@ -2,7 +2,11 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public final int maxCount = 3;
+    private static final int maxCount = 3;
+
+    public static int getMaxCount() {
+        return maxCount;
+    }
     private static String gameSelection;
     public Engine(String gameSelection) {
         Engine.gameSelection = gameSelection;
@@ -37,7 +41,7 @@ public class Engine {
             return true;
         } else {
             System.out.println("'" + usersAnswer + "' is wrong answer ;(. Correct answer was '" + answer
-                    + "'.\nLet's try again, " + Cli.userName + "!");
+                    + "'.\nLet's try again, " + Cli.getName() + "!");
             return false;
         }
     }
