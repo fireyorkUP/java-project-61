@@ -17,7 +17,7 @@ public class Progression {
         int sequenceLength = Utils.generateNum(minLength, maxLength);
         int[] progression;
         int hiddenIndex;
-        while (rightAns < engine.getMaxCount()) {
+        while (rightAns < Engine.getMaxCount()) {
             int firstNumber = Utils.generateNum(minNum, maxNum);
             int step = Utils.generateNum(minNum, maxNum);
             progression = genProgression(sequenceLength, firstNumber, step);

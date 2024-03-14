@@ -2,15 +2,15 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int maxCount = 3;
+    private static final int MaxCount = 3;
 
     public static int getMaxCount() {
-        return maxCount;
+        return MaxCount;
     }
     static String gameSelection;
 
     public Engine(String gameSelection) {
-        Engine.gameSelection = gameSelection;
+        this.gameSelection = gameSelection;
     }
 
     public static boolean newGame(Object question, Object answer) {
