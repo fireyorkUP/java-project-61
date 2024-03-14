@@ -7,7 +7,8 @@ public class Calc {
     private static String question;
     public static void game() {
         String gameDescription = "What is the result of the expression?";
-        Engine engine = new Engine(gameDescription);
+        Engine engine = new Engine();
+        engine.setGameSelection(gameDescription);
         Cli.greetingName();
         int rightAns = 0;
         while (rightAns < Engine.getMaxCount()) {

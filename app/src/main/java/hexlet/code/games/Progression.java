@@ -7,7 +7,8 @@ import java.util.Random;
 public class Progression {
     public static void getStart() {
         String gameDescription = "What number is missing in the progression?";
-        Engine engine = new Engine(gameDescription);
+        Engine engine = new Engine();
+        engine.setGameSelection(gameDescription);
         Random random = new Random();
         Cli.greetingName();
         int rightAns = 0;

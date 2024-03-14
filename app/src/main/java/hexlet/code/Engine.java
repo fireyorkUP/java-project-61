@@ -7,9 +7,9 @@ public class Engine {
     public static int getMaxCount() {
         return MAX_COUNT;
     }
-    public String gameSelection;
+    private String gameSelection;
 
-    public Engine(String gameSelection) {
+    public void setGameSelection(String gameSelection) {
         this.gameSelection = gameSelection;
     }
 
