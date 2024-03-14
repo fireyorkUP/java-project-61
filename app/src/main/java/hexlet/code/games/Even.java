@@ -5,7 +5,8 @@ import hexlet.code.Utils;
 
 public class Even {
     public static void getAnswer() {
-        Engine engine = new Engine("Even");
+        String gameDescription = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        Engine engine = new Engine(gameDescription);
         Cli.greetingName();
         int rightAns = 0;
         String normalAnswer;
@@ -18,7 +19,7 @@ public class Even {
             } else {
                 normalAnswer = "yes";
             }
-            if (Engine.newGame(newValue, normalAnswer)) {
+            if (Engine.newGame(gameDescription, newValue, normalAnswer)) {
                 rightAns++;
             } else {
                 break;

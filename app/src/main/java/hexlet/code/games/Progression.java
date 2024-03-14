@@ -6,7 +6,8 @@ import java.util.Random;
 
 public class Progression {
     public static void getStart() {
-        Engine engine = new Engine("Progression");
+        String gameDescription = "What number is missing in the progression?";
+        Engine engine = new Engine(gameDescription);
         Random random = new Random();
         Cli.greetingName();
         int rightAns = 0;
@@ -24,7 +25,7 @@ public class Progression {
             hiddenIndex = random.nextInt(sequenceLength);
             String displayedSequence = getDisplayed(progression, hiddenIndex);
             String result = Integer.toString(progression[hiddenIndex]);
-            if (Engine.newGame(displayedSequence, result)) {
+            if (Engine.newGame(gameDescription, displayedSequence, result)) {
                 rightAns++;
             } else {
                 break;

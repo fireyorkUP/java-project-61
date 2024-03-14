@@ -5,7 +5,8 @@ import hexlet.code.Utils;
 
 public class Prime {
     public static void getPrime() {
-        Engine engine = new Engine("Prime");
+        String gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        Engine engine = new Engine(gameDescription);
         Cli.greetingName();
         int rightAns = 0;
         while (rightAns < Engine.getMaxCount()) {
@@ -13,7 +14,7 @@ public class Prime {
             final int maxNum = 100;
             int randomNumber = Utils.generateNum(minNum, maxNum);
             String result = isPrime(randomNumber) ? "yes" : "no";
-            if (Engine.newGame(randomNumber, result)) {
+            if (Engine.newGame(gameDescription, randomNumber, result)) {
                 rightAns++;
             } else {
                 break;

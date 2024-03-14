@@ -6,12 +6,13 @@ import hexlet.code.Utils;
 public class Calc {
     private static String question;
     public static void game() {
-        Engine engine = new Engine("Calc");
+        String gameDescription = "What is the result of the expression?";
+        Engine engine = new Engine(gameDescription);
         Cli.greetingName();
         int rightAns = 0;
         while (rightAns < Engine.getMaxCount()) {
             String resultTask = Integer.toString(getTask());
-            if (Engine.newGame(question, resultTask)) {
+            if (Engine.newGame(gameDescription, question, resultTask)) {
                 rightAns++;
             } else {
                 break;

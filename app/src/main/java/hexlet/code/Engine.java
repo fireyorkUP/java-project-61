@@ -7,32 +7,14 @@ public class Engine {
     public static int getMaxCount() {
         return MAX_COUNT;
     }
-    private static String gameSelection;
+    public String gameSelection;
 
     public Engine(String gameSelection) {
         this.gameSelection = gameSelection;
     }
 
-    public static boolean newGame(Object question, Object answer) {
-        switch (gameSelection) {
-            case ("Even"):
-                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-                break;
-            case ("Calc"):
-                System.out.println("What is the result of the expression?");
-                break;
-            case ("GCD"):
-                System.out.println("Find the greatest common divisor of given numbers.");
-                break;
-            case ("Progression"):
-                System.out.println("What number is missing in the progression?");
-                break;
-            case ("Prime"):
-                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-                break;
-            default:
-                break;
-        }
+    public static boolean newGame(String gameSelection, Object question, Object answer) {
+        System.out.println(gameSelection);
         Scanner userChoice = new Scanner(System.in);
         System.out.println("Question: " + question);
         String usersAnswer = userChoice.nextLine();
