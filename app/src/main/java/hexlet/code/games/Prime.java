@@ -8,7 +8,7 @@ public class Prime {
         Engine engine = new Engine("Prime");
         Cli.greetingName();
         int rightAns = 0;
-        while (rightAns < engine.MAX_COUNT) {
+        while (rightAns < engine.maxCount) {
             final int minNum = 1;
             final int maxNum = 100;
             int randomNumber = Utils.generateNum(minNum, maxNum);
@@ -19,7 +19,7 @@ public class Prime {
                 break;
             }
         }
-        if (rightAns == engine.MAX_COUNT) {
+        if (rightAns == engine.maxCount) {
             System.out.println("Congratulations, " + Cli.userName + "!");
         }
     }

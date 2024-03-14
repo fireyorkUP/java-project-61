@@ -21,7 +21,6 @@ public class App {
         System.out.println("Your choice: " + userChoice);
         selectGame(userChoice);
     }
-
     public static void selectGame(String userChoice) {
         switch (userChoice) {
             case ("1"):

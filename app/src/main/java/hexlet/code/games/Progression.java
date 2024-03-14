@@ -13,9 +13,13 @@ public class Progression {
         final int maxLength = 10;
         final int minLength = 5;
         int sequenceLength = Utils.generateNum(minLength, maxLength);
-        int[] progression = genProgression(sequenceLength);
-        int hiddenIndex = random.nextInt(sequenceLength);
-        while (rightAns < engine.MAX_COUNT) {
+        int[] progression;
+        int hiddenIndex;
+        while (rightAns < engine.maxCount) {
+            int firstNumber = Utils.generateNum(1, 100);
+            int step = Utils.generateNum(1, 100);
+            progression = genProgression(sequenceLength, firstNumber, step);
+            hiddenIndex = random.nextInt(sequenceLength);
             String displayedSequence = getDisplayed(progression, hiddenIndex);
             String result = Integer.toString(progression[hiddenIndex]);
             if (Engine.newGame(displayedSequence, result)) {
@@ -23,10 +27,8 @@ public class Progression {
             } else {
                 break;
             }
-            progression = genProgression(sequenceLength);
-            hiddenIndex = random.nextInt(sequenceLength);
         }
-        if (rightAns == engine.MAX_COUNT) {
+        if (rightAns == engine.maxCount) {
             System.out.println("Congratulations, " + Cli.userName + "!");
         }
     }
@@ -46,15 +48,11 @@ public class Progression {
         return displayed.toString();
     }
 
-    private static int[] genProgression(int length) {
-        final int minMin = 1;
-        final int maxNum = 100;
-        int start = Utils.generateNum(minMin, maxNum);
-        int step = Utils.generateNum(minMin, maxNum);
-
+    private static int[] genProgression(int length, int firstNumber, int step) {
         int[] progression = new int[length];
-        for (int i = 0; i < length; i++) {
-            progression[i] = start + i * step;
+        progression[0] = firstNumber;
+        for (int i = 1; i < length; i++) {
+            progression[i] = progression[i - 1] + step;
         }
         return progression;
     }

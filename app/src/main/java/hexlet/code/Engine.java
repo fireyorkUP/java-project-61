@@ -2,7 +2,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public final int MAX_COUNT = 3;
+    public final int maxCount = 3;
     private static String gameSelection;
     public Engine(String gameSelection) {
         Engine.gameSelection = gameSelection;
