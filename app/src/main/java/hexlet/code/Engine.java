@@ -2,12 +2,12 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int MaxCount = 3;
+    private static final int MAX_COUNT = 3;
 
     public static int getMaxCount() {
-        return MaxCount;
+        return MAX_COUNT;
     }
-    static String gameSelection;
+    private static String gameSelection;
 
     public Engine(String gameSelection) {
         this.gameSelection = gameSelection;
