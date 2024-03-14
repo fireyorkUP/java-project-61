@@ -7,7 +7,8 @@ public class Engine {
     public static int getMaxCount() {
         return maxCount;
     }
-    private static String gameSelection;
+    static String gameSelection;
+
     public Engine(String gameSelection) {
         Engine.gameSelection = gameSelection;
     }
