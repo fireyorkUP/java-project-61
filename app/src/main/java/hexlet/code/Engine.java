@@ -27,27 +27,12 @@ public class Engine {
                 attempts++;
             } else {
                 System.out.println("'" + usersAnswer + "' is wrong answer ;(. Correct answer was '" + arrayQaA[i][1]
-                        + "'.\nLet's try again, " + Cli.getName() + "!");
+                        + "'.\nLet's try again, " + userName + "!");
                 break;
             }
         }
-//        while (attempts < MAX_COUNT) {
-//            Scanner userChoice = new Scanner(System.in);
-//            System.out.println("Question: " + question);
-//            String usersAnswer = userChoice.nextLine();
-//            System.out.println("Your answer: " + usersAnswer);
-//            if (usersAnswer.equals(answer)) {
-//                System.out.println("Correct!");
-//                attempts++;
-//            } else {
-//                System.out.println("'" + usersAnswer + "' is wrong answer ;(. Correct answer was '" + answer
-//                        + "'.\nLet's try again, " + Cli.getName() + "!");
-//                break;
-//            }
-//        }
         if (attempts == MAX_COUNT) {
-            System.out.println("Congratulations, " + Cli.getName() + "!");
+            System.out.println("Congratulations, " + userName + "!");
         }
-
     }
 }
