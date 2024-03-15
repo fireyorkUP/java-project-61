@@ -1,5 +1,4 @@
 package hexlet.code.games;
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 import java.util.Random;
@@ -7,11 +6,8 @@ import java.util.Random;
 public class Progression {
     public static void getStart() {
         String gameDescription = "What number is missing in the progression?";
-        Engine engine = new Engine();
-        engine.setGameSelection(gameDescription);
+        String[][] gameData = new String[Engine.getMaxCount()][2];
         Random random = new Random();
-        Cli.greetingName();
-        int rightAns = 0;
         final int maxLength = 10;
         final int minLength = 5;
         final int minNum = 1;
@@ -19,22 +15,15 @@ public class Progression {
         int sequenceLength = Utils.generateNum(minLength, maxLength);
         int[] progression;
         int hiddenIndex;
-        while (rightAns < Engine.getMaxCount()) {
+        for (int i = 0; i < Engine.getMaxCount(); i++) {
             int firstNumber = Utils.generateNum(minNum, maxNum);
             int step = Utils.generateNum(minNum, maxNum);
             progression = genProgression(sequenceLength, firstNumber, step);
             hiddenIndex = random.nextInt(sequenceLength);
-            String displayedSequence = getDisplayed(progression, hiddenIndex);
-            String result = Integer.toString(progression[hiddenIndex]);
-            if (Engine.newGame(gameDescription, displayedSequence, result)) {
-                rightAns++;
-            } else {
-                break;
-            }
+            gameData[i][0] = getDisplayed(progression, hiddenIndex);
+            gameData[i][1] = Integer.toString(progression[hiddenIndex]);
         }
-        if (rightAns == Engine.getMaxCount()) {
-            System.out.println("Congratulations, " + Cli.getName() + "!");
-        }
+        Engine.newGame(gameDescription, gameData);
     }
 
     private static String getDisplayed(int[] progression, int hiddenIndex) {

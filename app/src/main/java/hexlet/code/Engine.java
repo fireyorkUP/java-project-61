@@ -7,25 +7,47 @@ public class Engine {
     public static int getMaxCount() {
         return MAX_COUNT;
     }
-    private String gameSelection;
 
-    public void setGameSelection(String gameSelection) {
-        this.gameSelection = gameSelection;
-    }
-
-    public static boolean newGame(String gameSelection, Object question, Object answer) {
+    public static void
+    newGame(String gameSelection, String[][] arrayQaA) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName +  "!");
         System.out.println(gameSelection);
-        Scanner userChoice = new Scanner(System.in);
-        System.out.println("Question: " + question);
-        String usersAnswer = userChoice.nextLine();
-        System.out.println("Your answer: " + usersAnswer);
-        if (usersAnswer.equals(answer)) {
-            System.out.println("Correct!");
-            return true;
-        } else {
-            System.out.println("'" + usersAnswer + "' is wrong answer ;(. Correct answer was '" + answer
-                    + "'.\nLet's try again, " + Cli.getName() + "!");
-            return false;
+        int attempts = 0;
+        for (int i = 0; i < MAX_COUNT; i++) {
+            Scanner userChoice = new Scanner(System.in);
+            System.out.println("Question: " + arrayQaA[i][0]);
+            String usersAnswer = userChoice.nextLine();
+            System.out.println("Your answer: " + usersAnswer);
+            if (usersAnswer.equals(arrayQaA[i][1])) {
+                System.out.println("Correct!");
+                attempts++;
+            } else {
+                System.out.println("'" + usersAnswer + "' is wrong answer ;(. Correct answer was '" + arrayQaA[i][1]
+                        + "'.\nLet's try again, " + Cli.getName() + "!");
+                break;
+            }
         }
+//        while (attempts < MAX_COUNT) {
+//            Scanner userChoice = new Scanner(System.in);
+//            System.out.println("Question: " + question);
+//            String usersAnswer = userChoice.nextLine();
+//            System.out.println("Your answer: " + usersAnswer);
+//            if (usersAnswer.equals(answer)) {
+//                System.out.println("Correct!");
+//                attempts++;
+//            } else {
+//                System.out.println("'" + usersAnswer + "' is wrong answer ;(. Correct answer was '" + answer
+//                        + "'.\nLet's try again, " + Cli.getName() + "!");
+//                break;
+//            }
+//        }
+        if (attempts == MAX_COUNT) {
+            System.out.println("Congratulations, " + Cli.getName() + "!");
+        }
+
     }
 }

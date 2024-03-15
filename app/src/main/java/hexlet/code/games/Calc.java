@@ -1,27 +1,17 @@
 package hexlet.code.games;
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
     private static String question;
     public static void game() {
+        String[][] gameData = new String[Engine.getMaxCount()][2];
         String gameDescription = "What is the result of the expression?";
-        Engine engine = new Engine();
-        engine.setGameSelection(gameDescription);
-        Cli.greetingName();
-        int rightAns = 0;
-        while (rightAns < Engine.getMaxCount()) {
-            String resultTask = Integer.toString(getTask());
-            if (Engine.newGame(gameDescription, question, resultTask)) {
-                rightAns++;
-            } else {
-                break;
-            }
+        for (int i = 0; i < Engine.getMaxCount(); i++) {
+            gameData[i][1] = Integer.toString(getTask());
+            gameData[i][0] = question;
         }
-        if (rightAns == Engine.getMaxCount()) {
-        System.out.println("Congratulations, " + Cli.getName() + "!");
-    }
+        Engine.newGame(gameDescription, gameData);
     }
 
     private static int getTask() {
