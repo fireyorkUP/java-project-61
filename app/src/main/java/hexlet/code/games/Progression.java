@@ -4,7 +4,7 @@ import hexlet.code.Utils;
 import java.util.Random;
 
 public class Progression {
-    public static void getStart() {
+    public static void gameProgression() {
         String gameDescription = "What number is missing in the progression?";
         String[][] gameData = new String[Engine.getMaxCount()][2];
         Random random = new Random();

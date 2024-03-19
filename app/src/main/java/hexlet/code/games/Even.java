@@ -3,7 +3,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Even {
-    public static void getAnswer() {
+    public static void gameEven() {
         String gameDescription = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         String[][] gameData = new String[Engine.getMaxCount()][2];
         for (int i = 0; i < Engine.getMaxCount(); i++) {
