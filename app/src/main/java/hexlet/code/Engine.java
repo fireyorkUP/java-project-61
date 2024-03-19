@@ -8,8 +8,7 @@ public class Engine {
         return MAX_COUNT;
     }
 
-    public static void
-    newGame(String gameSelection, String[][] arrayQaA) {
+    public static void newGame(String gameSelection, String[][] arrayQaA) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");

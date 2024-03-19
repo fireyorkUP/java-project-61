@@ -3,7 +3,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Prime {
-    public static void getPrime() {
+    public static void generateRoundData() {
         String gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] gameData = new String[Engine.getMaxCount()][2];
         for (int i = 0; i < Engine.getMaxCount(); i++) {
