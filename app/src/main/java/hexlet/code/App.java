@@ -1,4 +1,5 @@
 package hexlet.code;
+
 import java.util.Scanner;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
@@ -39,12 +40,13 @@ public class App {
                 Progression.gameProgression();
                 break;
             case ("6"):
-                Prime.generateRoundData();
+                Prime.gamePrime();
                 break;
             case ("0"):
                 break;
             default:
                 System.out.println("invalid value");
+                break;
         }
     }
 }

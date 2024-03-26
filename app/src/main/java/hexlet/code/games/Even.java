@@ -1,4 +1,5 @@
 package hexlet.code.games;
+
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -18,7 +19,7 @@ public class Even {
             gameData[i][0] = Integer.toString(newValue);
 
         }
-        Engine.newGame(gameDescription, gameData);
+        Engine.dataProcessing(gameDescription, gameData);
     }
     public static boolean isEven(int num) {
         return num % 2 == 0;

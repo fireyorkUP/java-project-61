@@ -1,7 +1,7 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-
+import java.util.Arrays;
 import java.util.Random;
 
 public class Progression {
@@ -14,7 +14,7 @@ public class Progression {
         final int minNum = 1;
         final int maxNum = 100;
         int sequenceLength = Utils.generateNum(minLength, maxLength);
-        int[] progression;
+        String[] progression;
         int hiddenIndex;
         for (int i = 0; i < Engine.getMaxCount(); i++) {
             int firstNumber = Utils.generateNum(minNum, maxNum);
@@ -22,31 +22,22 @@ public class Progression {
             progression = genProgression(sequenceLength, firstNumber, step);
             hiddenIndex = random.nextInt(sequenceLength);
             gameData[i][0] = getDisplayed(progression, hiddenIndex);
-            gameData[i][1] = Integer.toString(progression[hiddenIndex]);
+            gameData[i][1] = progression[hiddenIndex];
         }
-        Engine.newGame(gameDescription, gameData);
+        Engine.dataProcessing(gameDescription, gameData);
     }
 
-    private static String getDisplayed(int[] progression, int hiddenIndex) {
-        StringBuilder displayed = new StringBuilder();
-        for (int i = 0; i < progression.length; i++) {
-            if (i == hiddenIndex) {
-                displayed.append("..");
-            } else {
-                displayed.append(progression[i]);
-            }
-            if (i < progression.length - 1) {
-                displayed.append(" ");
-            }
-        }
-        return displayed.toString();
+    private static String getDisplayed(String[] progression, int hiddenIndex) {
+        String[] progression2 = Arrays.copyOf(progression, progression.length);
+        progression2[hiddenIndex] = "..";
+        return String.join(" ", progression2);
     }
 
-    private static int[] genProgression(int length, int firstNumber, int step) {
-        int[] progression = new int[length];
-        progression[0] = firstNumber;
-        for (int i = 1; i < length; i++) {
-            progression[i] = progression[i - 1] + step;
+    private static String[] genProgression(int length, int firstNumber, int step) {
+        String[] progression = new String[length];
+        for (int i = 0; i < length; i++) {
+            int num = firstNumber + i * step;
+            progression[i] = String.valueOf(num);
         }
         return progression;
     }

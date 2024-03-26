@@ -1,9 +1,10 @@
 package hexlet.code.games;
+
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Prime {
-    public static void generateRoundData() {
+    public static void gamePrime() {
         String gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] gameData = new String[Engine.getMaxCount()][2];
         for (int i = 0; i < Engine.getMaxCount(); i++) {
@@ -13,7 +14,7 @@ public class Prime {
             gameData[i][1] = isPrime(randomNumber) ? "yes" : "no";
             gameData[i][0] = Integer.toString(randomNumber);
         }
-        Engine.newGame(gameDescription, gameData);
+        Engine.dataProcessing(gameDescription, gameData);
     }
 
     private static boolean isPrime(int num) {

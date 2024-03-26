@@ -1,14 +1,14 @@
 package hexlet.code;
+
 import java.util.Scanner;
 
 public class Engine {
     private static final int MAX_COUNT = 3;
-
     public static int getMaxCount() {
         return MAX_COUNT;
     }
 
-    public static void newGame(String gameSelection, String[][] arrayQaA) {
+    public static void dataProcessing(String gameSelection, String[][] arrayQaA) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");

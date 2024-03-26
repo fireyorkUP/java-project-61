@@ -1,4 +1,5 @@
 package hexlet.code.games;
+
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -15,7 +16,7 @@ public class GCD {
             gameData[i][0] = num1 + " " + num2;
 
         }
-        Engine.newGame(gameDescription, gameData);
+        Engine.dataProcessing(gameDescription, gameData);
     }
     private static int getGCD(int a, int b) {
         if (b == 0) {
